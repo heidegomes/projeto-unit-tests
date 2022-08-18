@@ -26,21 +26,23 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   expect(circle('a')).toBeUndefined();
   });
   it('Verifica se a função `circle` retorna um objeto', () => {
-    expect(circle(1)).toMatchObject({radius: 1, area: 3.14, circumference: 6.28});
+    expect(typeof(circle(1))).tobe('object');
   });
   it('Verifica se a função `circle` retorna um objeto com 3 propriedades', () => {
-    expect(circle(1)).toHaveProperty('radius', 'area', 'circumference');
+    expect(object.keys(circle(1).lenght)).toBe(3);
   });
   it('Verifica se quando função `circle` não recebe nenhum parâmetro retorna undefined', () => {
     expect(circle()).toBeUndefined();
   });
   it('Verifica se a função `circle` retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2', () => {
-    expect(circle(2)).toMatchObject({circumference: 12.56});
+    expect(circle(2).circumference).toBeCloseTo(12.56);
   });
   it('Verifica se a função `circle` retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 3', () => {
-    expect(circle(3)).toMatchObject({circumference: 18.84});
+    expect(circle(3).area).toBeCloseTo(28.26);
   });
   it('Verifica se a função `circle` retorna em um objeto, os dados corretos de um círculo de raio 3', () => {
-    expect(circle(3)).toMatchObject({radius: 3, area: 28.259999999999998, circumference: 18.84});
+    expect(circle(3).radius).toBeCloseTo(3);
+    expect(circle(3).area).toBeCloseTo(28.26);
+    expect(circle(3).circumference).toBeCloseTo(18.84);
   });
 });
